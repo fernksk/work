@@ -3,6 +3,11 @@ body{
   padding: 0;
   text-align: center;
   font-family: 'Roboto Condensed', sans-serif;
+  background-image: url(../images/work-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .container{
@@ -54,8 +59,8 @@ body{
   pointer-events:none;
   z-index:4;
   transition: .3s ease-in-out;
-  -webkit-backdrop-filter: blur(5px) saturate(1.8);
-  backdrop-filter: blur(5px) saturate(1.8);
+  backdrop-filter: blur(5px) saturate(1.8) !important;
+  /*-webkit-backdrop-filter: blur(5px) saturate(1.8);*/
 }
 
 .collection-item:hover .content{
@@ -66,30 +71,39 @@ body{
 }
 
 .work-title{
+  color: #2c2c2c !important;
+  letter-spacing: 8px;
+  font-size: 60px;
+  font-weight: 700;
+  animation: fade-in-move-down 0.7s;
+}
+
+.work-title:hover{
   color: #f0e67d !important;
   text-shadow:3px 3px 0 #2c2c2c;
   letter-spacing: 8px;
   font-size: 60px;
   font-weight: 700;
+  animation: fade-in-move-down 0.7s;
 }
+
 
 .collection-title{
+  color: #2c2c2c !important;
+  letter-spacing: 8px;
+  font-size: 60px;
+  font-weight: 700;
+  animation: fade-in-move-down 0.7s;
+}
+
+.collection-title:hover{
   color: #f0e67d !important;
   text-shadow:3px 3px 0 #2c2c2c;
   letter-spacing: 8px;
   font-size: 60px;
   font-weight: 700;
+  animation: fade-in-move-down 0.7s;
 }
-
-// .vertical-text {
-//   writing-mode: vertical-lr;
-//   text-orientation: upright;
-//   letter-spacing: 4px;
-//   font-size: 50px;
-//   font-weight: 700;
-//   text-align: center;
-//   margin: 0;
-// }
 
 .content{
   letter-spacing: 2px;
@@ -121,6 +135,16 @@ body{
   font-size: 25px;
   font-weight: 700;
   color: #f0e67d;
+}
+
+.pastries-modal-body img{
+  width: 500px;
+  height: 800px;
+}
+
+.oni-modal-body img{
+  width: 700px;
+  height: 800px;
 }
 
 .w-1{
@@ -164,7 +188,7 @@ body{
 
 
 
-@media screen and (max-width:500px){
+@media screen and (max-width:576px){
     .container{
         grid-template-columns: repeat(1,1fr);
     }
@@ -174,10 +198,22 @@ body{
         padding-top: 70px;
         font-size: 30px;
         letter-spacing: 4px;
-        // writing-mode: horizontal-tb;
+        /*writing-mode: horizontal-tb;*/
+    }
+
+    .work-title:hover{
+      margin-top: 0;
+      padding-top: 70px;
+      font-size: 30px;
+      letter-spacing: 4px;
     }
 
     .collection-title{
+       font-size: 30px;
+       letter-spacing: 4px;
+    }
+
+    .collection-title:hover{
        font-size: 30px;
        letter-spacing: 4px;
     }
@@ -194,9 +230,9 @@ body{
       color: #747474;
     }
 
-    .oni-mobile{
-      width: 400px;
-      height: 500px;
+    .oni-modal-body img{
+      width: 480px;
+      height: 550px;
     }
 
     .w-1,.w-2,.w-3,.w-4,.w-5,.w-6{
@@ -216,4 +252,15 @@ body{
     100%{
         top:50%;
     }
+}
+
+@keyframes fade-in-move-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
